@@ -29,42 +29,57 @@
 				<h1 class="test-heading">Create an accessible form</h1>
 				
 				<form aria-labelledby="form-title">
-				<h2 id="form-title" class="test-heading2">Text Inputs</h2>
-				<label for="text-input">Text Input</label>
-				<input type="text" id="text-input" name="text-input" required>
-				<label for="number-input">Number</label>
-				<input type="number" id="number-input" name="number-input" required>
-				<label for="email-input">Email</label>
-				<input type="email" id="email-input" required>
+					<h2 id="form-title" class="test-heading2">Text Inputs</h2>
+					<div class="form-group-input">
+						<label for="text-input">Text Input</label>
+						<input type="text" id="text-input" name="text-input" required>
+						<label for="number-input">Number</label>
+						<input type="number" id="number-input" name="number-input" required>
+						<label for="email-input">Email</label>
+						<input type="email" id="email-input" required>
+					</div>
 				<h2 class="test-heading2">Radio Inputs</h2>
-				<fieldset>
-					<legend>Select an option:</legend>
-					<input type="radio" id="radio1" name="options" value="1">
-					<label for="radio1">Radio Button 1</label>
+				<fieldset class="radio-group">
+					<legend class="radio-header">Select an option:</legend>
+					<div class="radio-option">
+						<input type="radio" id="radio1" name="options" value="1">
+						<label for="radio1">Radio Button 1</label>
+					</div>
+					<div class="radio-option">
+						<input type="radio" id="radio2" name="options" value="2">
+						<label for="radio2">Radio Button 2</label>
+					</div>
+					<div class="radio-option">
+						<input type="radio" id="radio3" name="options" value="3">
+						<label for="radio3">Radio Button 3</label>
+					</div>
 				</fieldset>
-				<input type="radio"><span>create a group of alteast 3 radio inputs with labels</span>
 				<h2 class="test-heading2">Multiline Input</h2>
-				<input type="text" placeholder="Create Multiline input with label">
-
-
+				<div class="form-group">
+					<label for="message">Your Message:</label>
+					<textarea name="message" id="message" rows="6" cols="50" required placeholder="Write Your Text Here"></textarea>
+				</div>	
+				<button class="form-submit" type="submit">Submit Form</button>
 				</form>
 				
 				<h1 class="test-heading">Bonus Marks: Create an accessible modal with Keyboard Trap.(only if everything else is complete)</h1>
-				<button class="modal-trigger">Modal Trigger</button> 
-				<div class="modal">
-					<button >Close Modal</button>
-					<div class="modal-header">
-						<div>
-							<h1>This is a modal title 1</h1>
+				<button class="modal-trigger" id="open-modal">Open Modal</button> 
+				<div class="modal" id="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+					<div class="modal-content">
+						<button id="close-modal" class="modal-close">Close Modal</button>
+						<div class="modal-header">
+							<div>
+								<h1 id="modal-title">This is a modal title 1</h1>
+							</div>
+						</div>
+						<div class="modal-body">
+							<p tabindex="0">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+							</p>
 						</div>
 					</div>
-					<div class="modal-body">
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-						</p>
-					</div>
 				</div>
-				<div class="overlay"></div>
+				<div class="overlay" id="modal-overlay"></div>
 
 			</main>
 			<footer>
