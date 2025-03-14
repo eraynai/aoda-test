@@ -14,27 +14,41 @@
 			<h1 class="test-heading">BMO Accessiblity Test for UI Devs</h1>
 			<header>
 				<h1 class="test-heading">Create an accessible navigation</h1>
-				<button>Show/Hide Nav</button>
-				<nav>
-					<span>Home</span>
-					<span>About</span>
-					<span>Banking</span>
-					<span>Hockey</span>
-					<span>Good Food</span>
-					<span>UI Development</span>
-					<span>Contact</span>
+				<button aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav" id="menu-toggle">☰</button>
+				<nav aria-label="Main Navigation">
+					<ul id="primary-nav" hidden>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#banking">Banking</a></li>
+						<li><a href="#hobbies">Hobbies</a></li>
+						<li><a href="#food">Food</a></li>
+					</ul>
 				</nav>
 			</header>	
 			<main class="main-content" id="main-content">
 				<h1 class="test-heading">Create an accessible form</h1>
-				<h2 class="test-heading2">Text Inputs</h2>
-				<input type="text" placeholder="Create Text Input with label">
-				<input type="text" placeholder="Create a Number input with label">
-				<input type="text" placeholder="Create an Email with label">
+				
+				<form aria-labelledby="form-title">
+				<h2 id="form-title" class="test-heading2">Text Inputs</h2>
+				<label for="text-input">Text Input</label>
+				<input type="text" id="text-input" name="text-input" required>
+				<label for="number-input">Number</label>
+				<input type="number" id="number-input" name="number-input" required>
+				<label for="email-input">Email</label>
+				<input type="email" id="email-input" required>
 				<h2 class="test-heading2">Radio Inputs</h2>
+				<fieldset>
+					<legend>Select an option:</legend>
+					<input type="radio" id="radio1" name="options" value="1">
+					<label for="radio1">Radio Button 1</label>
+				</fieldset>
 				<input type="radio"><span>create a group of alteast 3 radio inputs with labels</span>
 				<h2 class="test-heading2">Multiline Input</h2>
 				<input type="text" placeholder="Create Multiline input with label">
+
+
+				</form>
+				
 				<h1 class="test-heading">Bonus Marks: Create an accessible modal with Keyboard Trap.(only if everything else is complete)</h1>
 				<button class="modal-trigger">Modal Trigger</button> 
 				<div class="modal">
@@ -57,7 +71,7 @@
 				<h1 class="test-heading">footer</h1>
 			</footer>
 		</div>	
-		<script src="assets/js/jquery-1.11.3.min.js"></script>
+		<!-- <script src="assets/js/jquery-1.11.3.min.js"></script> -->
 		<script src="js/your-js-here.js"></script>
 	</body>	
 </html>
